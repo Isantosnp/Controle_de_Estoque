@@ -1,0 +1,15 @@
+CREATE TABLE fornecedor (
+  nome_fornecedor VARCHAR(100) PRIMARY KEY,
+  cnpj varchar(18)
+);
+
+-- Criação da tabela produto
+CREATE TABLE produto (
+  id_produto SERIAL PRIMARY KEY,
+  nome_produto VARCHAR(100),
+  quantidade INT,
+  valor FLOAT,
+  dta DATE,
+  nome_fornecedor VARCHAR(100),
+  FOREIGN KEY (nome_fornecedor) REFERENCES fornecedor (nome_fornecedor)
+);
